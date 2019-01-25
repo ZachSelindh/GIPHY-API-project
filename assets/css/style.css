@@ -1,0 +1,49 @@
+/* CSS page for GIPHY API project */
+
+@font-face {
+    font-family: "Coffee";
+    src: url("../fonts/coffee.ttf");
+}
+
+* {
+    font-family: "Coffee" !important;
+    box-sizing: border-box;
+}
+
+#page-title-top, #page-body {
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0.5em;
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+}
+
+#page-title-top {
+    margin-top: 1em;
+}
+
+#title-sub {
+    font-size: 150%;
+}
+
+#page-body {
+    margin-top: 2em;
+}
+
+#button-array {
+    
+}
+
+button {
+    font-size: 150%;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+
+
+
+
