@@ -18,7 +18,8 @@ body {
     background-size: cover;
 }
 
-#page-title-top, #page-body, #input-section {
+#page-title-top, #page-body, 
+#input-section {
     border: 2px solid black;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0.5em;
@@ -59,23 +60,22 @@ body {
 }
 
 button {
+    margin: 0.1em;
     font-size: 200%;
+    min-width: 4em;
 }
 
 h1 {
     font-size: 400%;
 }
 
-button {
-    min-width: 4em;
-    margin: 0.05em;
-}
-
 input {
     margin: 1em;
-    height: 3em;
-    width: 11em;
+    height: 1.3em;
+    width: 8em;
     overflow: hidden;
+    text-align: center;
+    font-size: 200%;
 }
 
 p {
