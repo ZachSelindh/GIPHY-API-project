@@ -34,12 +34,6 @@ function addGIFs(x) {
     }
 }
 
-    /* Pulls a random number between x and y for fade-in times. */
-function randomNum(x, y) {
-    num = [Math.floor(Math.random() * (y-x+1) + x)]
-    return num;
-};
-
 
 $(document).on("click", "#submit-button", function(){
     addButton();
