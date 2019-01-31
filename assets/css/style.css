@@ -52,7 +52,6 @@ body {
 
 #gif-content {
     margin-top: 1em;
-    /* display: none; */
     height: fit-content;
 }
 
@@ -86,6 +85,14 @@ p {
     margin-top: 0.5em;
 }
 
+img {
+    margin: 0.25em;
+}
+
+h2 {
+    font-size: 400%;
+    text-decoration: underline;
+}
 
 
 
