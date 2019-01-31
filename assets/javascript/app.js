@@ -44,7 +44,7 @@ $(document).on("click", ".search-button", function(){
     $("#gif-content").show();
     var titleTag = $(this).attr("data-source");
     var APItag = titleTag.trim();
-    var APIURL = "http://api.giphy.com/v1/gifs/search?q=" + APItag + "&api_key=" + APIkey + "&limit=10";
+    var APIURL = "https://api.giphy.com/v1/gifs/search?q=" + APItag + "&api_key=" + APIkey + "&limit=10";
 
     $.ajax({
         url: APIURL,
