@@ -24,16 +24,27 @@ function addButton() {
     /* Function to add the GIFs to the page, giving them attributes that will be used as src */
 function addGIFs(x) {
     for (i = 0; i < 10; i ++) {
+        var divOfGIF = $("<div>");
         var newGIF = $("<img>");
+        var ratingGIF = $("<p>");
+        var titleGIF = $("<p>");
         var sourceURL = x.data[i].images.fixed_height_still.url;
+        divOfGIF.attr("class", "image-box");
         newGIF.attr("src", sourceURL);
         newGIF.attr("image-still", sourceURL);
         newGIF.attr("image-animate", x.data[i].images.fixed_height.url);
         newGIF.attr("state", "still");
-        $("#gif-content").prepend(newGIF);
-    }
+        newGIF.attr("class", "gif-image")
+        $("#gif-content").prepend(divOfGIF);
+        $(divOfGIF).append(newGIF);
+        ratingGIF.attr("class", "rating-text");
+        ratingGIF.text("Rating:" + x.data[i].rating);
+        titleGIF.attr("class", "title-text");
+        titleGIF.text("Title:" + x.data[i].title);
+        $(divOfGIF).append(ratingGIF);
+        $(divOfGIF).append(titleGIF);
+    } 
 }
-
 
 $(document).on("click", "#submit-button", function(){
     addButton();
@@ -52,7 +63,7 @@ $(document).on("click", ".search-button", function(){
       }).done(function(response) {
             addGIFs(response);
             var GIFsTitle = $("<h2>");
-            GIFsTitle.text(titleTag)
+            GIFsTitle.text(titleTag);
             $("#gif-content").prepend(GIFsTitle);
       });
 });
@@ -62,11 +73,22 @@ $(document).on("click", "img", function(){
     var GIFstate = $(this).attr("state");
     if (GIFstate === "still") {
         $(this).attr("src", $(this).attr("image-animate"));
-        $(this).attr("state", "playing")
+        $(this).attr("state", "playing");
     } else if (GIFstate === "playing") {
         $(this).attr("src", $(this).attr("image-still"));
         $(this).attr("state", "still");
     }
+});
+
+    /* Shows the title and rating when the image is moused over, and hides when not. */
+$(document).on("mouseenter", ".image-box", function(){
+    $(this).find(".gif-image").css("border-color", "white");
+    $(this).find(".title-text").show();
+    $(this).find(".rating-text").show();
+    }).on("mouseleave", ".image-box", function(){
+        $(this).find(".gif-image").css("border-color", "black");
+        $(this).find(".title-text").hide();
+        $(this).find(".rating-text").hide();
 });
 
 };

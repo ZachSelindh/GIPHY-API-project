@@ -1,12 +1,17 @@
 /* CSS page for GIPHY API project */
 
 @font-face {
-    font-family: "Movies";
+    font-family: "movies";
     src: url("../fonts/motion-picture.ttf");
 }
 
+@font-face {
+    font-family: "ratings";
+    src: url("../fonts/coneria.ttf");
+}
+
 * {
-    font-family: "Movies" !important;
+    font-family: "movies";
     box-sizing: border-box;
 }
 
@@ -53,11 +58,49 @@ body {
 #gif-content {
     margin-top: 1em;
     height: fit-content;
+    overflow: hidden;
 }
 
 #gif-field {
     background-color: rgba(255, 255, 255, 0.8);
-    
+}
+
+#submit-text {
+    font-size: 200%;
+    margin-top: 0.5em;
+}
+
+.image-box {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.rating-text {
+    font-family: "ratings";
+    position: absolute;
+    bottom: 0px;
+    left: 9px;
+    z-index: 99;
+    font-size: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.1em;
+    display: none;
+}
+
+.title-text {
+    font-family: "movies";
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    z-index: 99;
+    font-size: 150%;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.1em;
+    max-width: 110px;
+    overflow: hidden;
+    display: none;
+    max-height: 196px;
 }
 
 button {
@@ -80,13 +123,18 @@ input {
     font-size: 200%;
 }
 
-p {
-    font-size: 200%;
-    margin-top: 0.5em;
+img {
+    border: 2px solid black;
+    border-radius: 0.25em;
+    margin: 0.25em;
 }
 
-img {
-    margin: 0.25em;
+img:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 h2 {
