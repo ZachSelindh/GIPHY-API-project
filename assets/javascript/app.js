@@ -91,4 +91,9 @@ $(document).on("mouseenter", ".image-box", function(){
         $(this).find(".rating-text").hide();
 });
 
+$(document).on("click", "#clear-button", function(){
+    $("#gif-content").empty();
+    $("#gif-content").hide();
+});
+
 };
